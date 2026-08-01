@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#020713">
+  <meta name="description" content="4IN1 academic bundle dashboard">
+  <title>4IN1 — Bundle Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body class="portal-page dashboard-page dashboard-home-page">
+  <div class="portal-noise" aria-hidden="true"></div>
+  <div class="portal-grid" aria-hidden="true"></div>
+
+  <div class="portal-splash dashboard-splash" id="dashboardSplash" role="status" aria-live="polite" aria-label="Loading bundle dashboard">
+    <div class="splash-field" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="splash-copy"><strong>4IN1</strong><small>Opening bundle command field</small><i><b></b></i></div>
+  </div>
+
+  <header class="portal-header dashboard-header">
+    <a class="portal-brand" href="dashboard.html" aria-label="Stay in the authenticated 4IN1 dashboard">
+      <span class="portal-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span><strong>4IN1</strong><small>GDD / USA</small></span>
+    </a>
+    <div class="account-cluster dashboard-account">
+      <a class="profile-nav-link" href="profile.html" aria-label="Open Vishvaa P's profile">
+        <span class="profile-nav-icon" aria-hidden="true">VP<i></i></span>
+        <span class="profile-nav-copy"><b>Vishvaa P</b><small>Product profile</small></span>
+        <em>↗</em>
+      </a>
+      <button class="header-action signout-action" id="dashboardLogout" type="button">Sign out</button>
+    </div>
+  </header>
+
+  <main class="dashboard-shell">
+    <section class="dashboard-hero">
+      <div>
+        <p class="portal-eyebrow"><span></span> Academic node / authenticated</p>
+        <h1>Bundle<br><em>command field.</em></h1>
+      </div>
+      <div class="hero-metrics" aria-label="Account summary">
+        <article><span>Purchased bundles</span><strong id="dashboardPurchasedCount">00</strong><small>Profile-linked licences</small></article>
+        <article><span>Register node</span><strong>23CB062</strong><small>Academic channel</small></article>
+        <article><span>Protocol status</span><strong class="status-online">ONLINE</strong><small>USA lattice</small></article>
+      </div>
+    </section>
+
+    <section class="purchased-section" id="purchased">
+      <div class="section-heading">
+        <div><p class="portal-eyebrow"><span></span> Inventory / linked</p><h2>Purchased bundles</h2></div>
+        <a class="section-count profile-jump" href="profile.html#fees">Manage in profile ↗</a>
+      </div>
+      <div class="empty-purchases" id="dashboardEmpty">
+        <div class="empty-symbol" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div><h3>No bundles have been purchased yet.</h3><p>Select bundles from Vishvaa's private product profile. Activated systems will appear here automatically.</p></div>
+        <a class="portal-primary compact" href="profile.html#fees">Open product profile <span>↗</span></a>
+      </div>
+      <div class="dashboard-purchased-grid" id="dashboardPurchasedGrid" hidden></div>
+    </section>
+
+    <section class="explore-section" id="explore">
+      <div class="section-heading">
+        <div><p class="portal-eyebrow"><span></span> Acquisition field / 04</p><h2>Explore bundles</h2></div>
+        <p class="heading-note">Four systems currently assigned to registration node 23CB062.</p>
+      </div>
+      <div class="bundle-grid dashboard-bundle-grid">
+        <article class="bundle-card featured-bundle"><div class="bundle-visual visual-quadrature" aria-hidden="true"><div class="mini-cube"><i></i><i></i><i></i><i></i></div></div><div class="bundle-meta"><span>01 / FOUNDATION</span><b>JUL · 20</b></div><h3>Quadrature<br>Neural Foundation</h3><p>Four-channel foundations in recursive inference and speculative systems design.</p><a class="bundle-action" href="profile.html#fees">Inspect in profile <span>↗</span></a></article>
+        <article class="bundle-card"><div class="bundle-visual visual-canopy" aria-hidden="true"><i></i><i></i><i></i></div><div class="bundle-meta"><span>02 / ECOLOGICAL</span><b>JUL · 25</b></div><h3>Ambient<br>Canopy Systems</h3><p>Photosynthetic computation and carbon-aware data structures inside a synthetic canopy.</p><a class="bundle-action" href="profile.html#fees">Inspect in profile <span>↗</span></a></article>
+        <article class="bundle-card"><div class="bundle-visual visual-mycelial-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="bundle-meta"><span>03 / NETWORK</span><b>JUL · 25</b></div><h3>Mycelial<br>Data Routing</h3><p>Distributed data memory through non-linear biological routing principles.</p><a class="bundle-action" href="profile.html#fees">Inspect in profile <span>↗</span></a></article>
+        <article class="bundle-card"><div class="bundle-visual visual-architecture" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="bundle-meta"><span>04 / ADVANCED</span><b>JUL · 28</b></div><h3>Post-Quantum<br>Architecture</h3><p>Resilient computational chambers across four simultaneous operational realities.</p><a class="bundle-action" href="profile.html#fees">Inspect in profile <span>↗</span></a></article>
+      </div>
+    </section>
+
+    <section class="payment-portal-section" id="payment">
+      <div class="section-heading">
+        <div><p class="portal-eyebrow"><span></span> Return channel / secured</p><h2>Payment portal</h2></div>
+        <p class="heading-note">₹1,800 per purchased bundle becomes claimable only on its assigned return date.</p>
+      </div>
+      <div class="payment-console">
+        <div class="payment-console-head">
+          <div><small>Claimable now</small><strong id="claimableAmount">₹0</strong></div>
+          <div><small>Scheduled return</small><strong id="scheduledAmount">₹0</strong></div>
+          <div><small>Payment rail</small><strong class="status-online">SECURED</strong></div>
+        </div>
+        <div class="return-portal-empty" id="returnPortalEmpty">
+          <span class="return-lock" aria-hidden="true"><i></i></span>
+          <div><h3>No return claims are active.</h3><p>Pay ₹2,000 for a bundle from the product profile. Its ₹1,800 return will appear here and unlock on the return date.</p></div>
+          <a class="portal-primary compact" href="profile.html#fees">Choose a bundle <span>↗</span></a>
+        </div>
+        <div class="return-claims" id="returnClaims" hidden></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="portal-toast" id="portalToast" role="status" aria-live="polite"><i></i><span>Dashboard synchronized.</span></div>
+  <script src="supabase-config.js"></script>
+  <script src="supabase-client.js"></script>
+  <script src="portal.js"></script>
+</body>
+</html>
