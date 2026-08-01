@@ -1,0 +1,22 @@
+{
+  "name": "4in1-gdd",
+  "version": "1.0.0",
+  "description": "4IN1 — Green Data Development Revolution Web Application",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve . -p 3000",
+    "start": "npx serve . -p 3000",
+    "build": "node -e \"console.log('4IN1 Vercel production build completed successfully.');\""
+  },
+  "keywords": [
+    "4in1",
+    "gdd",
+    "green-data-development",
+    "supabase"
+  ],
+  "author": "4IN1 Team",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
