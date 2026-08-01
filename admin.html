@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#020713">
+  <meta name="description" content="4IN1 System Administration Control Panel">
+  <title>4IN1 — Administration Console</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500;600&family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body class="portal-page dashboard-page admin-page">
+  <div class="portal-noise" aria-hidden="true"></div>
+  <div class="portal-grid" aria-hidden="true"></div>
+
+  <header class="portal-header dashboard-header">
+    <a class="portal-brand" href="admin.html" aria-label="4IN1 Admin Control Panel">
+      <span class="portal-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span><strong>4IN1</strong><small>ADMIN / SYSTEM CONTROL</small></span>
+    </a>
+
+    <div class="account-cluster profile-actions">
+      <span class="account-node"><i class="admin-dot"></i> ADMIN NODE / admin@4in1</span>
+      <button class="header-action signout-action" id="adminLogout" type="button">Sign out ↗</button>
+    </div>
+  </header>
+
+  <main class="dashboard-shell admin-shell">
+    <section class="admin-hero">
+      <div class="admin-intro">
+        <p class="portal-eyebrow"><span></span> Centralized Management / Master Control</p>
+        <h1>System<br><em>Administration.</em></h1>
+        <p class="profile-lede">Manage active students, override fee bundle statuses, and update regional payment QR codes in real-time.</p>
+      </div>
+
+      <div class="hero-metrics admin-metrics">
+        <article>
+          <span>Registered Students</span>
+          <strong id="adminStudentCount">01</strong>
+          <small>Active node: 23CB062</small>
+        </article>
+        <article>
+          <span>Managed Systems</span>
+          <strong id="adminBundleCount">04</strong>
+          <small>Fee bundles active</small>
+        </article>
+        <article>
+          <span>Payment Rail QR</span>
+          <strong class="status-online" id="adminQrStatus">Active</strong>
+          <small id="adminQrType">Custom QR Configured</small>
+        </article>
+      </div>
+    </section>
+
+    <!-- Student Selection & Overview Section -->
+    <section class="admin-section">
+      <div class="section-heading">
+        <div>
+          <p class="portal-eyebrow"><span></span> Student Directory & Account Control</p>
+          <h2>Student Management</h2>
+        </div>
+        <div class="student-selector-wrap">
+          <label for="studentSelect" class="admin-field-label">Select Student Node:</label>
+          <select id="studentSelect" class="admin-select">
+            <option value="23cb062" selected>23CB062 — Vishvaa P (CS&BS)</option>
+          </select>
+        </div>
+      </div>
+
+      <article class="identity-card admin-student-card">
+        <div class="identity-topline"><span>NODE / 23CB062</span><span>AUTHENTICATED STUDENT</span></div>
+        <div class="identity-person">
+          <div class="identity-avatar"><span>VP</span></div>
+          <div>
+            <small>Student Name</small>
+            <h2>Vishvaa P</h2>
+            <p>B.Tech · CS&amp;BS</p>
+          </div>
+        </div>
+        <dl class="identity-grid">
+          <div><dt>Register Number</dt><dd>23CB062</dd></div>
+          <div><dt>Department</dt><dd>CS&amp;BS</dd></div>
+          <div><dt>Email Address</dt><dd>23CB062@drngpit.ac.in</dd></div>
+          <div><dt>Mobile Number</dt><dd>93630 80459</dd></div>
+          <div><dt>Father's Name</dt><dd>Parthipan R</dd></div>
+          <div><dt>Date of Birth</dt><dd>06 Apr 2006</dd></div>
+        </dl>
+      </article>
+    </section>
+
+    <!-- Payment QR Management Section -->
+    <section class="admin-section">
+      <div class="section-heading">
+        <div>
+          <p class="portal-eyebrow"><span></span> Payment Gateway Configuration</p>
+          <h2>Bundle Payment QR Code</h2>
+        </div>
+        <p class="heading-note">Upload or replace the payment QR image. Students on the payment page will immediately scan this updated QR code.</p>
+      </div>
+
+      <div class="admin-qr-console">
+        <div class="qr-preview-box">
+          <div class="qr-visual">
+            <span></span>
+            <img id="adminQrPreviewImg" src="assets/gpay-qr.png" alt="Current Payment QR Code Preview">
+            <i></i>
+          </div>
+          <span class="qr-status-tag">Current Active QR</span>
+        </div>
+
+        <form id="adminQrForm" class="admin-qr-form">
+          <div class="portal-field">
+            <span>Upload New QR Image (PNG/JPG/WebP)</span>
+            <input type="file" id="qrFileInput" accept="image/png, image/jpeg, image/webp" style="padding-top: 15px;">
+          </div>
+
+          <div class="portal-field">
+            <span>Or Enter QR Image URL</span>
+            <input type="url" id="qrUrlInput" placeholder="https://example.com/payment-qr.png">
+          </div>
+
+          <div class="admin-btn-row">
+            <button type="submit" class="portal-primary compact" id="saveQrBtn">Upload &amp; Apply QR <span>↗</span></button>
+            <button type="button" class="header-action" id="resetQrBtn">Reset to Default QR</button>
+          </div>
+          <p class="form-message" id="adminQrMsg" role="alert"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Student Bundle Control Table Section -->
+    <section class="admin-section">
+      <div class="section-heading">
+        <div>
+          <p class="portal-eyebrow"><span></span> Bundle Allocation & Fees Control</p>
+          <h2>Bundle Management (23CB062)</h2>
+        </div>
+        <p class="heading-note">Control status, dates, and fee structure for each student bundle in real-time.</p>
+      </div>
+
+      <div class="fee-console admin-table-console">
+        <div class="fee-table-wrap">
+          <table class="fee-table admin-fee-table" aria-label="Admin Bundle Control Table">
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Fees Type</th>
+                <th>Period</th>
+                <th>Payable Now</th>
+                <th>Return Date</th>
+                <th>Return Fee</th>
+                <th>Total Fee</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="adminBundleTableBody">
+              <!-- Dynamically rendered rows -->
+            </tbody>
+          </table>
+        </div>
+        <div class="admin-save-bar">
+          <button type="button" id="saveAllBundlesBtn" class="portal-primary compact">Save All Bundle Changes <span>↗</span></button>
+          <span id="bundleSaveMsg" class="form-message"></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="adminToast" class="portal-toast" role="status" aria-live="polite">
+    <span>Admin update applied successfully.</span>
+  </div>
+
+  <script src="supabase-config.js"></script>
+  <script src="supabase-client.js"></script>
+  <script src="portal.js?v=4"></script>
+</body>
+</html>
