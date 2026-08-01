@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#020713">
+  <meta name="description" content="4IN1 private bundle payment gateway for 23CB062">
+  <title>4IN1 — Secure Payment Field</title>
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body class="portal-page dashboard-page payment-page">
+  <div class="portal-noise" aria-hidden="true"></div>
+  <div class="portal-grid" aria-hidden="true"></div>
+
+  <div class="portal-splash payment-splash" id="paymentSplash" role="status" aria-live="polite" aria-label="Opening secure payment field">
+    <div class="splash-field" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="splash-copy"><strong>PAY / 4IN1</strong><small>Establishing regional payment relay</small><i><b></b></i></div>
+  </div>
+
+  <header class="portal-header dashboard-header">
+    <a class="portal-brand" href="dashboard.html" aria-label="Return to the authenticated dashboard">
+      <span class="portal-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span><strong>4IN1</strong><small>PAYMENT / INDIA</small></span>
+    </a>
+    <div class="account-cluster profile-actions">
+      <span class="account-node"><i></i> 23CB062</span>
+      <a class="header-action" href="profile.html#fees">← <span>Cancel</span></a>
+    </div>
+  </header>
+
+  <main class="payment-shell" id="gateway">
+    <section class="payment-hero reveal-item">
+      <div>
+        <p class="portal-eyebrow"><span></span> Regional checkout / encrypted prototype</p>
+        <h1>Resolve the<br><em>payment field.</em></h1>
+        <p class="payment-lede">Complete the ₹2,000 acquisition value for each reserved bundle. Its ₹1,800 return field unlocks only on the assigned return date.</p>
+      </div>
+      <aside class="region-card">
+        <svg class="region-flag" viewBox="0 0 64 64" role="img" aria-label="India">
+          <path d="M31.8 2C18.8 2 7.7 10.4 3.6 22h56.6C56 10.4 44.9 2 31.8 2z" fill="#f2b200"/>
+          <path d="M31.8 62c13.1 0 24.2-8.3 28.3-20H3.6c4.1 11.7 15.2 20 28.2 20z" fill="#83bf4f"/>
+          <path d="M3.6 22A30 30 0 0 0 3.6 42h56.6a30 30 0 0 0 0-20z" fill="#fff"/>
+          <circle cx="31.8" cy="32" r="7.5" fill="none" stroke="#428bc1" stroke-width="1.5"/>
+          <g stroke="#428bc1" stroke-width=".8"><path d="M31.8 24.5v15M24.3 32h15M26.5 26.7l10.6 10.6M37.1 26.7L26.5 37.3M28 25.5l7.6 13M24.8 28.2l14 7.6M24.8 35.8l14-7.6M28 38.5l7.6-13"/></g>
+        </svg>
+        <div><small>Payment region</small><strong>India / INR</strong><span><i></i> GPay + card relay available</span></div>
+      </aside>
+    </section>
+
+    <section class="checkout-layout reveal-item">
+      <aside class="checkout-summary" aria-labelledby="summaryTitle">
+        <p class="portal-eyebrow"><span></span> Reserved bundle field</p>
+        <h2 id="summaryTitle">Order summary</h2>
+        <div class="checkout-items" id="checkoutItems"></div>
+        <div class="checkout-totals">
+          <span>Reserved bundles <b id="checkoutCount">0</b></span>
+          <span>Scheduled return <b id="checkoutReturn">₹0</b></span>
+          <strong>Payable now <b id="checkoutTotal">₹0</b></strong>
+        </div>
+        <p class="prototype-note"><i></i> UX prototype gateway. No live banking processor or email delivery service is connected.</p>
+      </aside>
+
+      <section class="gateway-console" aria-labelledby="gatewayTitle">
+        <div class="gateway-head">
+          <div><small>Acquisition channel</small><h2 id="gatewayTitle">Choose payment rail</h2></div>
+          <span class="secure-badge"><i></i> TLS / SIMULATED</span>
+        </div>
+
+        <div class="payment-methods" id="paymentMethods">
+          <button class="payment-method active" id="gpayMethod" type="button" aria-pressed="true">
+            <svg viewBox="0 -19 256 256" role="img" aria-label="Google Pay"><path d="M232.504 42.169c-25.25-14.576-57.538-5.915-72.13 19.336l-36.782 63.717c-10.643 18.4 3.058 24.829 18.337 33.989l35.393 20.428c11.986 6.914 27.295 2.809 34.208-9.16l37.813-65.482c12.703-22.004 5.165-50.125-16.839-62.828z" fill="#EA4335"/><path d="M190.884 68.542l-35.393-20.428c-19.539-10.846-30.603-11.564-38.625 1.186l-52.2 90.404c-14.576 25.234-5.9 57.507 19.335 72.051 22.004 12.703 50.126 5.165 62.829-16.839l53.199-92.151c6.945-11.985 2.841-27.31-9.145-34.223z" fill="#FBBC04"/><path d="M197.697 22.069L172.837 7.711C145.34-8.16 110.18 1.251 94.309 28.748l-47.332 81.976c-6.991 12.095-2.84 27.575 9.254 34.551l27.841 16.074c13.748 7.944 31.32 3.23 39.264-10.518l54.073-93.649c11.205-19.398 36.002-26.046 55.4-14.841l-35.112-20.272z" fill="#34A853"/><path d="M101.033 52.203L74.16 36.722c-11.985-6.898-27.294-2.809-34.207 9.145L7.711 101.579c-15.87 27.419-6.46 62.501 21.037 78.325l56.04 32.272c-19.117-12.796-25.188-38.436-13.5-58.63l38.921-67.245c6.898-11.923 2.794-27.201-9.176-34.098z" fill="#4285F4"/></svg>
+            <span><b>Google Pay</b><small>Available in this region</small></span><i>SELECTED</i>
+          </button>
+          <button class="payment-method" id="cardMethod" type="button" aria-pressed="false">
+            <svg viewBox="0 0 64 48" role="img" aria-label="Debit or credit card"><rect x="5" y="10" width="54" height="34" rx="6" fill="#0d234b" stroke="#75f8ff" stroke-width="2"/><path d="M9 19h46" stroke="#baf7ff" stroke-width="4"/><rect x="12" y="29" width="15" height="4" rx="2" fill="#baf7ff"/><rect x="34" y="29" width="14" height="4" rx="2" fill="#56a8ff"/></svg>
+            <span><b>Debit / credit card</b><small>Regional relay available</small></span><i>AVAILABLE</i>
+          </button>
+          <div class="payment-method disabled" aria-disabled="true">
+            <svg viewBox="0 -34.55 120.3 120.3" role="img" aria-label="Apple Pay"><path d="M22.8 6.6c1.4-1.8 2.4-4.2 2.1-6.6-2.1.1-4.6 1.4-6.1 3.1-1.3 1.5-2.5 4-2.2 6.3 2.4.3 4.7-1 6.2-2.8M24.9 10c-3.4-.2-6.3 1.9-7.9 1.9-1.6 0-4.1-1.8-6.8-1.8-3.5.1-6.7 2-8.5 5.2-3.6 6.3-1 15.6 2.6 20.7 1.7 2.5 3.8 5.3 6.5 5.2 2.6-.1 3.6-1.7 6.7-1.7s4 1.7 6.8 1.6 4.6-2.5 6.3-5.1c2-2.9 2.8-5.7 2.8-5.8-.1-.1-5.5-2.1-5.5-8.3-.1-5.2 4.2-7.7 4.4-7.8-2.3-3.6-6.1-4-7.4-4.1"/><path d="M54.3 2.9c7.4 0 12.5 5.1 12.5 12.4 0 7.4-5.2 12.5-12.7 12.5H46v12.9h-5.9V2.9h14.2zm-8.3 20h6.7c5.1 0 8-2.8 8-7.5 0-4.8-2.9-7.5-8-7.5h-6.8v15h.1zM68.3 33c0-4.8 3.7-7.8 10.3-8.2l7.6-.4v-2.1c0-3.1-2.1-4.9-5.5-4.9-3.3 0-5.3 1.6-5.8 4h-5.4c.3-5 4.6-8.7 11.4-8.7 6.7 0 11 3.5 11 9.1v19h-5.4v-4.5h-.1c-1.6 3.1-5.1 5-8.7 5-5.6 0-9.4-3.4-9.4-8.3zm17.9-2.5v-2.2l-6.8.4c-3.4.2-5.3 1.7-5.3 4.1 0 2.4 2 4 5 4 4 0 7.1-2.7 7.1-6.3zM96.9 51v-4.6c.4.1 1.4.1 1.8.1 2.6 0 4-1.1 4.9-3.9l.5-1.7-10-27.6h6.1l7 22.5h.1l7-22.5h6L110 42.4c-2.4 6.7-5.1 8.8-10.8 8.8-.4-.1-1.8-.1-2.3-.2z"/></svg>
+            <span><b>Apple Pay</b><small>Not provisioned for this region</small></span><i>LOCKED</i>
+          </div>
+          <div class="payment-method disabled" aria-disabled="true">
+            <svg viewBox="0 0 58 41" role="img" aria-label="PayPal"><path d="M34.06 9.85c-.6 3.08-2.69 4.41-5.3 4.41h-1.33a.65.65 0 0 0-.64.54l-.87 5.56c-.03.2.13.39.34.39h2.36c.28 0 .51-.2.56-.48l.49-3.1c.04-.28.28-.48.56-.48h.35c2.29 0 4.08-.93 4.6-3.62.22-1.12.1-2.06-.48-2.72a2.5 2.5 0 0 0-.64-.5z" fill="#298FC2"/><path d="M27.57 9.87c.03-.19.15-.35.32-.43a.56.56 0 0 1 .24-.05h3.55c.9 0 1.66.1 2.38.46.18-1.14 0-1.91-.61-2.61-.68-.77-1.9-1.1-3.46-1.1h-4.53c-.32 0-.59.23-.64.55l-1.89 11.99c-.04.24.15.45.39.45h2.8l1.45-9.26z" fill="#28356A"/></svg>
+            <span><b>PayPal</b><small>Not provisioned for this region</small></span><i>LOCKED</i>
+          </div>
+        </div>
+
+        <div class="gpay-stage" id="gpayStage">
+          <div class="analysis-field" id="analysisField">
+            <div class="analysis-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+            <p>Google Pay is the only active acquisition rail for India.</p>
+            <button class="portal-primary compact" id="analyzePayment" type="button">Analyze payment field <span>↗</span></button>
+          </div>
+
+          <div class="qr-field" id="qrField" hidden>
+            <div class="qr-visual"><span></span><img id="paymentQrImg" src="assets/gpay-qr.png" alt="Google Pay payment QR code"><i></i></div>
+            <div class="qr-copy">
+              <p class="portal-eyebrow"><span></span> Scanner ready</p>
+              <h3>Scan with Google Pay.</h3>
+              <p>Use the GPay scanner to resolve the exact payable amount. On mobile, use the launch control and return here after payment.</p>
+              <button class="secondary-action gpay-launch" id="openGpay" type="button">Open GPay scanner ↗</button>
+            </div>
+          </div>
+
+          <form class="payment-proof" id="paymentProof" hidden novalidate>
+            <div class="proof-heading"><div><small>Post-payment verification</small><h3>Confirm the transfer.</h3></div><span>02 / 02</span></div>
+            <label>UTR / transaction reference
+              <input id="utrNumber" name="utr" type="text" inputmode="text" minlength="12" maxlength="22" pattern="[A-Za-z0-9]{12,22}" autocomplete="off" placeholder="12–22 letters or numbers" required>
+              <small>Confirmation remains locked without a valid payment reference.</small>
+            </label>
+            <label>E-bill email address
+              <input id="billEmail" name="email" type="email" autocomplete="email" value="23CB062@drngpit.ac.in" placeholder="you@example.com" required>
+              <small>The prototype receipt will be prepared for this address.</small>
+            </label>
+            <p class="form-message" id="paymentMessage" role="alert"></p>
+            <button class="portal-primary" id="confirmPayment" type="submit">Verify UTR &amp; confirm purchase <span>↗</span></button>
+          </form>
+        </div>
+
+        <details class="card-preview" id="cardStage">
+          <summary>Debit / credit card relay <span>Region available</span></summary>
+          <form class="card-fields" id="cardPaymentForm" novalidate>
+            <label>Issuing bank<select id="cardBank" required><option value="">Select issuing bank</option><option>Capital Small Finance Bank</option><option>Jana Small Finance Bank</option><option>Utkarsh Small Finance Bank</option><option>Fincare Small Finance Bank</option><option>Shivalik Small Finance Bank</option><option>Unity Small Finance Bank</option><option>North East Small Finance Bank</option></select></label>
+            <label class="wide-field">16-digit card number<input id="cardNumber" inputmode="numeric" maxlength="19" autocomplete="cc-number" placeholder="0000 0000 0000 0000" required></label>
+            <label>Expiry date<input id="cardExpiry" inputmode="numeric" maxlength="5" autocomplete="cc-exp" placeholder="MM/YY" required></label>
+            <label>CVV<input id="cardCvv" inputmode="numeric" maxlength="3" autocomplete="cc-csc" placeholder="•••" required></label>
+            <label class="wide-field">E-bill email address<input id="cardBillEmail" type="email" autocomplete="email" value="23CB062@drngpit.ac.in" placeholder="you@example.com" required></label>
+            <p class="form-message" id="cardPaymentMessage" role="alert"></p>
+            <button class="portal-primary" id="confirmCardPayment" type="submit">Authorize card relay <span>↗</span></button>
+          </form>
+        </details>
+      </section>
+    </section>
+  </main>
+
+  <div class="payment-success" id="paymentSuccess" role="dialog" aria-modal="true" aria-labelledby="successTitle" hidden>
+    <div class="success-core"><div class="success-cube" aria-hidden="true"><i></i><i></i><i></i><i></i></div><p class="portal-eyebrow"><span></span> Purchase synchronized</p><h2 id="successTitle">Payment reference accepted.</h2><p id="successCopy"></p><div class="success-line"><i></i></div></div>
+  </div>
+
+  <div class="portal-toast" id="paymentToast" role="status" aria-live="polite"><i></i><span>Payment field ready.</span></div>
+  <script src="portal.js"></script>
+</body>
+</html>
